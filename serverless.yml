@@ -1,11 +1,11 @@
-service: my-store-app
+service: candles-shop
 
 frameworkVersion: "3"
 
 provider:
   name: aws
-  runtime: nodejs14.x
-  region: eu-west-1
+  runtime: nodejs16.x
+  region: eu-central-1
   # setup profile for AWS CLI.
   # profile: node-aws
 
@@ -19,8 +19,9 @@ plugins:
 
 custom:
   client:
-    bucketName: my-store-app
+    bucketName: candles-shop-d61730ec-2e59-42c8-b820-66931290a1cc
     distributionFolder: dist
+    errorDocument: index.html
   s3BucketName: ${self:custom.client.bucketName}
 
   ## Serverless-single-page-app-plugin configuration:
