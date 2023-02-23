@@ -1,7 +1,7 @@
 import type { AWS } from "@serverless/typescript";
 
 import getProductsList from "@functions/getProductsList";
-// import getProductsById from "@functions/getProductsById";
+import getProductsById from "@functions/getProductsById";
 
 module.exports = {
   service: "get-products-list",
@@ -23,7 +23,7 @@ module.exports = {
   // import the function via paths
   functions: {
     getProductsList,
-    // getProductsById,
+    getProductsById,
   },
   package: { individually: true },
   custom: {

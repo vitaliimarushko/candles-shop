@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import ReviewCart from "~/components/pages/PageCart/components/ReviewCart";
 import ReviewOrder from "~/components/pages/PageCart/components/ReviewOrder";
 import PaperLayout from "~/components/PaperLayout/PaperLayout";
-import { Address, AddressSchema, Order } from "~/models/Order";
+import { Address, AddressSchema, Order } from "../../../../common/models/Order";
 import Box from "@mui/material/Box";
 import { useCart, useInvalidateCart } from "~/queries/cart";
 import AddressForm from "~/components/pages/PageCart/components/AddressForm";

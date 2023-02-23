@@ -4,7 +4,8 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "invoke:getProductsList": "sls invoke local -f getProductsList"
+    "invoke:getProductsList": "sls invoke local -f getProductsList",
+    "invoke:getProductsById": "sls invoke local -f getProductsById --data '{ \"pathParameters\": {\"productId\":\"7567ec4b-b10c-48c5-9345-fc73c48a80a1\"}}'"
   },
   "engines": {
     "node": ">=14.15.0"
