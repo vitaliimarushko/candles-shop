@@ -1,11 +1,11 @@
 import { MemoryRouter } from "react-router-dom";
 import { test, expect } from "vitest";
 import App from "~/components/App/App";
-import { server } from "../../../common/mocks/server";
+import { server } from "~/mocks/server";
 import { rest } from "msw";
-import API_PATHS from "../../../common/constants/apiPaths";
-import { CartItem } from "../../../common/models/CartItem";
-import { AvailableProduct } from "../../../common/models/Product";
+import API_PATHS from "~/constants/apiPaths";
+import { CartItem } from "~/models/CartItem";
+import { AvailableProduct } from "~/models/Product";
 import { renderWithProviders } from "~/testUtils";
 import { screen, waitForElementToBeRemoved } from "@testing-library/react";
 import { formatAsPrice } from "~/utils/utils";
