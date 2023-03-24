@@ -16,11 +16,14 @@ const queryClient = new QueryClient({
 });
 
 axios.interceptors.response.use(undefined, (error) => {
-  alert(
-    `Error message: ${
-      error.response?.data?.message || "Internal server error"
-    }; status code: ${error.response?.status || 500}`
-  );
+  if ([401, 403].includes(error.response?.status)) {
+    alert(
+      `Error message: ${
+        error.response.data?.message || "Unknown error happened"
+      }; status code: ${error.response.status}`
+    );
+  }
+
   return Promise.reject(error);
 });
 
