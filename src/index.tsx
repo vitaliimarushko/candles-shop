@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { createRoot } from "react-dom/client";
 import App from "~/components/App/App";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,6 +13,18 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: { refetchOnWindowFocus: false, retry: false, staleTime: Infinity },
   },
+});
+
+axios.interceptors.response.use(undefined, (error) => {
+  if ([401, 403].includes(error.response?.status)) {
+    alert(
+      `Error message: ${
+        error.response.data?.message || "Unknown error happened"
+      }; status code: ${error.response.status}`
+    );
+  }
+
+  return Promise.reject(error);
 });
 
 if (import.meta.env.DEV) {
